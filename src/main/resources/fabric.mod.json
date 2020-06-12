@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "sci-fi-biome-mod",
+  "version": "${version}",
+  "name": "Sci-Fi Biome Mod",
+  "license": "CC0-1.0",
+  "icon": "assets/sci-fi-biome-mod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.fabricmc.example.ModMain"
+    ],
+    "client": [
+      "net.fabricmc.example.client.ModMainClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.8.7",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
