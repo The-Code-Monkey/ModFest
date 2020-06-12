@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "astrum:block/astrum_log_side",
+    "down": "astrum:block/astrum_log_top",
+    "up": "astrum:block/astrum_log_top",
+    "north": "astrum:block/astrum_log_side",
+    "east": "astrum:block/astrum_log_side",
+    "south": "astrum:block/astrum_log_side",
+    "west": "astrum:block/astrum_log_side"
+  }
+}

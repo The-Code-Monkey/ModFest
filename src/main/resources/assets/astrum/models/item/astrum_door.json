@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "astrum:item/astrum_planks_door"
+    "layer0": "astrum:item/astrum_door"
   }
 }
