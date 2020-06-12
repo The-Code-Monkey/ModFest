@@ -1,6 +1,6 @@
 package net.astrum.common.enums;
 
-public enum ModRenderLayer {
+public enum AstrumRenderLayer {
     SOLID,
     CUTOUT,
     TRANSLUCENT;

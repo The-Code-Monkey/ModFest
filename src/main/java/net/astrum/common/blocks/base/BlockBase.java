@@ -1,12 +1,12 @@
 package net.astrum.common.blocks.base;
 
 import net.astrum.client.IRenderTypeable;
-import net.astrum.common.enums.ModRenderLayer;
+import net.astrum.common.enums.AstrumRenderLayer;
 import net.minecraft.block.Block;
 
 public class BlockBase extends Block implements IRenderTypeable {
     private boolean isClimmable = false;
-    private ModRenderLayer layer = ModRenderLayer.SOLID;
+    private AstrumRenderLayer layer = AstrumRenderLayer.SOLID;
 
     public BlockBase(Settings settings) {
         super(settings);
@@ -22,13 +22,13 @@ public class BlockBase extends Block implements IRenderTypeable {
         return isClimmable;
     }
 
-    public void setRenderLayer(ModRenderLayer layer)
+    public void setRenderLayer(AstrumRenderLayer layer)
     {
         this.layer = layer;
     }
 
     @Override
-    public ModRenderLayer getRenderLayer() {
+    public AstrumRenderLayer getRenderLayer() {
         return layer;
     }
 }

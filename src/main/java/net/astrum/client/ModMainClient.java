@@ -1,7 +1,7 @@
 package net.astrum.client;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.astrum.common.enums.ModRenderLayer;
+import net.astrum.common.enums.AstrumRenderLayer;
 import net.astrum.common.registry.EntityRenderRegistry;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;
@@ -23,10 +23,10 @@ public class ModMainClient implements ClientModInitializer {
         Registry.BLOCK.forEach(block -> {
             if (block instanceof IRenderTypeable)
             {
-                ModRenderLayer layer = ((IRenderTypeable) block).getRenderLayer();
-                if (layer == ModRenderLayer.CUTOUT)
+                AstrumRenderLayer layer = ((IRenderTypeable) block).getRenderLayer();
+                if (layer == AstrumRenderLayer.CUTOUT)
                     BlockRenderLayerMap.INSTANCE.putBlock(block, cutout);
-                else if (layer == ModRenderLayer.TRANSLUCENT)
+                else if (layer == AstrumRenderLayer.TRANSLUCENT)
                     BlockRenderLayerMap.INSTANCE.putBlock(block, translucent);
             }
         });

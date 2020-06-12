@@ -1,6 +1,6 @@
 package net.astrum.common.blocks.base;
 
-import net.astrum.common.enums.ModRenderLayer;
+import net.astrum.common.enums.AstrumRenderLayer;
 import net.astrum.common.helpers.BlocksHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -31,7 +31,7 @@ public class LadderBase extends BlockBaseNotFull {
 
     public LadderBase(Block block) {
         super(FabricBlockSettings.copy(block).nonOpaque());
-        this.setRenderLayer(ModRenderLayer.CUTOUT);
+        this.setRenderLayer(AstrumRenderLayer.CUTOUT);
         this.setClimmable(true);
     }
 

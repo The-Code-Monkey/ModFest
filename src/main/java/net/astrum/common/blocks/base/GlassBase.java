@@ -1,6 +1,6 @@
 package net.astrum.common.blocks.base;
 
-import net.astrum.common.enums.ModRenderLayer;
+import net.astrum.common.enums.AstrumRenderLayer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -16,7 +16,7 @@ public class GlassBase extends BlockBaseNotFull {
         super(FabricBlockSettings.copy(block)
                 .nonOpaque()
                 .sounds(BlockSoundGroup.GLASS));
-        this.setRenderLayer(ModRenderLayer.TRANSLUCENT);
+        this.setRenderLayer(AstrumRenderLayer.TRANSLUCENT);
     }
 
     @Environment(EnvType.CLIENT)

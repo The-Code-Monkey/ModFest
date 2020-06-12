@@ -1,6 +1,6 @@
 package net.astrum.common.blocks.base;
 
-import net.astrum.common.enums.ModRenderLayer;
+import net.astrum.common.enums.AstrumRenderLayer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.state.StateManager;
@@ -12,7 +12,7 @@ public class StainedGlassBase extends GlassBase {
 
     public StainedGlassBase(Block block) {
         super(block);
-        this.setRenderLayer(ModRenderLayer.TRANSLUCENT);
+        this.setRenderLayer(AstrumRenderLayer.TRANSLUCENT);
     }
 
     @Override

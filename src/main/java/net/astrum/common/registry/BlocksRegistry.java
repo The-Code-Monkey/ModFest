@@ -17,12 +17,13 @@ public class BlocksRegistry {
     public static final Block GRASS = registerBlock("astrum_grass", new GrassBase());
 
     public static void register() {
-        makeWoodenBlocks(ModMain.MOD_ID, MaterialColor.PURPLE_TERRACOTTA);
+        makeWoodenBlocks(ModMain.MOD_ID, MaterialColor.BLUE_TERRACOTTA);
     }
 
     private static void makeWoodenBlocks(String name, MaterialColor color) {
         final Block STRIPPED_LOG = registerBlock(name + "_stripped_log", new PillarBase(color));
         final Block LOG = registerBlock(name + "_log", new LogStripableBase(color, STRIPPED_LOG));
+        final Block LEAVES = registerBlock(name + "_leaves", new LeavesBase(MaterialColor.BLUE, LOG, STRIPPED_LOG));
         final Block PLANKS = registerBlock(name + "_planks", new PlankBase(color));
         final Block STAIRS = registerBlock(name + "_stairs", new StairsBase(PLANKS));
         final Block SLAB = registerBlock(name + "_slab", new SlabBase(PLANKS));
