@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/trapdoor",
+  "textures": {
+    "texture": "astrum:block/astrum_trapdoor",
+    "particle": "astrum:block/astrum_trapdoor"
+  }
+}

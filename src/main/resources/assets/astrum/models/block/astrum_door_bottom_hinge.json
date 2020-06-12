@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom_rh",
+  "textures": {
+    "bottom": "astrum:block/astrum_door_bottom",
+    "top": "astrum:block/astrum_door_top"
+  }
+}
