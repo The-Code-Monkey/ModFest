@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "astrum:block/test_grass"
+      },
+      {
+        "model": "astrum:block/test_grass",
+        "y": 90
+      },
+      {
+        "model": "astrum:block/test_grass",
+        "y": 180
+      },
+      {
+        "model": "astrum:block/test_grass",
+        "y": 270
+      }
+    ]
+  }
+}

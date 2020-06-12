@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "sci-fi-biome-mod",
+  "id": "astrum",
   "version": "${version}",
-  "name": "Sci-Fi Biome Mod",
+  "name": "Astrum",
   "license": "CC0-1.0",
-  "icon": "assets/sci-fi-biome-mod/icon.png",
+  "icon": "assets/astrum/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ModMain"
+      "net.astrum.ModMain"
     ],
     "client": [
-      "net.fabricmc.example.client.ModMainClient"
+      "net.astrum.client.ModMainClient"
     ]
   },
   "depends": {

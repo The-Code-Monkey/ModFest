@@ -1,0 +1,12 @@
+{
+  "itemGroup.astrum.items": "Astrum",
+  "block.astrum.test_grass": "Test Grass",
+  "block.astrum.test_stripped_log": "Test Stripped Log",
+  "block.astrum.test_log": "Test Log",
+  "block.astrum.test_planks": "Test Planks",
+  "block.astrum.test_stairs": "Test Stairs",
+  "block.astrum.test_slab": "Test Slab",
+  "block.astrum.test_plate": "Test Pressure Plate",
+  "block.astrum.test_door": "Test Door",
+  "block.astrum.test_trapdoor": "Test Trapdoor"
+}
