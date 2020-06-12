@@ -14,10 +14,10 @@ import net.minecraft.util.registry.Registry;
 
 public class BlocksRegistry {
 
-    public static final Block GRASS = registerBlock("test_grass", new GrassBase());
+    public static final Block GRASS = registerBlock("astrum_grass", new GrassBase());
 
     public static void register() {
-        makeWoodenBlocks("test", MaterialColor.PURPLE_TERRACOTTA);
+        makeWoodenBlocks(ModMain.MOD_ID, MaterialColor.PURPLE_TERRACOTTA);
     }
 
     private static void makeWoodenBlocks(String name, MaterialColor color) {
@@ -29,6 +29,9 @@ public class BlocksRegistry {
         final Block PRESSURE_PLATE = registerBlock(name + "_plate", new PressurePlateBase(PressurePlateBlock.ActivationRule.EVERYTHING, PLANKS));
         final Block DOOR = registerBlock(name + "_door", new DoorBase(PLANKS));
         final Block TRAP_DOOR = registerBlock(name + "_trapdoor", new TrapdoorBase(PLANKS));
+        final Block BUTTON = registerBlock(name + "_button", new WoodenButtonBase(PLANKS));
+        final Block FENCE = registerBlock(name + "_fence", new FenceBase(PLANKS));
+        final Block GATE = registerBlock(name + "_gate", new GateBase(PLANKS));
     }
 
     private static Block registerBlock(String name, Block block)

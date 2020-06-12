@@ -1,12 +1,15 @@
 {
   "itemGroup.astrum.items": "Astrum",
-  "block.astrum.test_grass": "Test Grass",
-  "block.astrum.test_stripped_log": "Test Stripped Log",
-  "block.astrum.test_log": "Test Log",
-  "block.astrum.test_planks": "Test Planks",
-  "block.astrum.test_stairs": "Test Stairs",
-  "block.astrum.test_slab": "Test Slab",
-  "block.astrum.test_plate": "Test Pressure Plate",
-  "block.astrum.test_door": "Test Door",
-  "block.astrum.test_trapdoor": "Test Trapdoor"
+  "block.astrum.astrum_grass": "Astrum Grass",
+  "block.astrum.astrum_stripped_log": "Astrum Stripped Log",
+  "block.astrum.astrum_log": "Astrum Log",
+  "block.astrum.astrum_planks": "Astrum Planks",
+  "block.astrum.astrum_stairs": "Astrum Stairs",
+  "block.astrum.astrum_slab": "Astrum Slab",
+  "block.astrum.astrum_plate": "Astrum Pressure Plate",
+  "block.astrum.astrum_door": "Astrum Door",
+  "block.astrum.astrum_trapdoor": "Astrum Trapdoor",
+  "block.astrum.astrum_button": "Astrum Button",
+  "block.astrum.astrum_fence": "Astrum Fence",
+  "block.astrum.astrum_gate": "Astrum Gate"
 }

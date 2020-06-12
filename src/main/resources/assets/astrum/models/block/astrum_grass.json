@@ -14,9 +14,9 @@
     }
   ],
   "textures": {
-    "particle": "astrum:block/test_grass_top",
-    "top": "astrum:block/test_grass_top",
-    "side": "astrum:block/test_grass_side",
-    "bottom": "astrum:block/test_dirt"
+    "particle": "astrum:block/astrum_grass_top",
+    "top": "astrum:block/astrum_grass_top",
+    "side": "astrum:block/astrum_grass_side",
+    "bottom": "astrum:block/astrum_dirt"
   }
 }

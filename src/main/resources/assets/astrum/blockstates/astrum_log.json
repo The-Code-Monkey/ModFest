@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y": { "model": "astrum:block/astrum_log" },
+    "axis=z": { "model": "astrum:block/astrum_log", "x": 90 },
+    "axis=x": { "model": "astrum:block/astrum_log", "x": 90, "y": 90 }
+  }
+}
