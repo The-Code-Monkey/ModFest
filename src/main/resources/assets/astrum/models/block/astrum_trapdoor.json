@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/trapdoor",
   "textures": {
-    "texture": "caelum:block/skyroot_trapdoor",
-    "particle": "caelum:block/skyroot_trapdoor"
+    "texture": "astrum:block/astrum_trapdoor",
+    "particle": "astrum:block/astrum_trapdoor"
   }
 }
