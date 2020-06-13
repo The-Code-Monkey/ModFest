@@ -81,7 +81,7 @@ public class GrassBase extends BlockBase implements Fertilizable {
     }
 
     public static boolean generate(World world, Random random, BlockPos pos, BlockPileFeatureConfig config, int i, int j) {
-        for (Block block = world.getBlockState(pos.down()).getBlock(); block != BlocksRegistry.GRASS && pos.getY() > 0; block = world.getBlockState(pos).getBlock()) {
+        for (Block block = world.getBlockState(pos.down()).getBlock(); block != BlocksRegistry.ASTRUM_GRASS && pos.getY() > 0; block = world.getBlockState(pos).getBlock()) {
             pos = pos.down();
         }
 
