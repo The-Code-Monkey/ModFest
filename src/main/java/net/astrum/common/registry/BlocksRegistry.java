@@ -12,12 +12,15 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-import static net.minecraft.block.Blocks.DIRT;
+import static net.minecraft.block.Blocks.*;
 
 public class BlocksRegistry {
 
     public static final Block ASTRUM_GRASS = registerBlock("astrum_grass", new GrassBase());
     public static final Block ASTRUM_DIRT = registerBlock("astrum_dirt", new BlockBase(FabricBlockSettings.copy(DIRT)));
+    public static final Block METEOR_STONE = registerBlock("meteor_stone", new BlockBase(FabricBlockSettings.copy(GRANITE)));
+    public static final Block ALIEN_SCRAP_ORE = registerBlock("alien_scrap_ore", new BlockBase(FabricBlockSettings.copy(IRON_ORE)));
+
 
     public static void register() {
         makeWoodenBlocks(AstrumCore.MOD_ID, MaterialColor.BLUE_TERRACOTTA);

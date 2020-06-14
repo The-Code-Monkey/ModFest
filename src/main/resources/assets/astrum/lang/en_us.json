@@ -2,6 +2,9 @@
   "itemGroup.astrum.items": "Astrum",
   "block.astrum.astrum_grass": "Astrum Grass",
   "block.astrum.astrum_dirt": "Astrum Dirt",
+  "block.astrum.meteor_stone": "Meteor Stone",
+  "block.astrum.alien_scrap_ore": "Alien Scrap Ore",
+
   "block.astrum.astrum_stripped_log": "Astrum Stripped Log",
   "block.astrum.astrum_log": "Astrum Log",
   "block.astrum.astrum_planks": "Astrum Planks",
@@ -16,6 +19,7 @@
   "block.astrum.astrum_leaves": "Astrum Leaves",
 
   "item.astrum.spawn_egg_triffid": "Triffid Spawn Egg",
+  "item.astrum.alien_scrap": "Alien Scrap",
 
   "entity.astrum.triffid": "Triffid"
 }
