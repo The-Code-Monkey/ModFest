@@ -1,6 +1,6 @@
 package net.astrum.common.materials;
 
-import net.astrum.ModMain;
+import net.astrum.AstrumCore;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AbstractBlock;
@@ -31,7 +31,7 @@ public class Materials {
     public static AbstractBlock.Settings makeLeaves(MaterialColor color) {
         return FabricBlockSettings.of(COMMON_WOOD, color)
                 .breakByHand(true)
-                .breakByTool(ModMain.SHEARS)
+                .breakByTool(AstrumCore.SHEARS)
                 .sounds(BlockSoundGroup.GRASS)
                 .nonOpaque()
                 .strength(0.2F, 0F);

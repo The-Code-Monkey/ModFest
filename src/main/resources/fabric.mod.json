@@ -8,10 +8,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.astrum.ModMain"
+      "net.astrum.AstrumCore"
     ],
     "client": [
-      "net.astrum.client.ModMainClient"
+      "net.astrum.client.AstrumCoreClient"
     ]
   },
   "depends": {

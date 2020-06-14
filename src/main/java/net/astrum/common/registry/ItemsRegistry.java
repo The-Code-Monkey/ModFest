@@ -1,6 +1,7 @@
 package net.astrum.common.registry;
 
-import net.astrum.ModMain;
+import net.astrum.AstrumCore;
+import net.astrum.common.helpers.MathHelper;
 import net.astrum.common.tab.CreativeTab;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
@@ -15,11 +16,13 @@ public class ItemsRegistry {
     public static final ArrayList<Item> MOD_BLOCKS = new ArrayList<Item>();
     public static final ArrayList<Item> MOD_ITEMS = new ArrayList<Item>();
 
+    public static final Item SPAWN_TRIFFID = registerItem("spawn_egg_triffid", makeEgg(EntityRegistry.TRIFFID, MathHelper.color(12, 12, 12), MathHelper.color(210, 90, 26)));
+
     public static void register() {}
 
     public static Item registerItem(String name, Item item)
     {
-        Registry.register(Registry.ITEM, new Identifier(ModMain.MOD_ID, name), item);
+        Registry.register(Registry.ITEM, new Identifier(AstrumCore.MOD_ID, name), item);
         if (item instanceof BlockItem)
             MOD_BLOCKS.add(item);
         else

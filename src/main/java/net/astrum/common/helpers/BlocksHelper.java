@@ -1,6 +1,6 @@
 package net.astrum.common.helpers;
 
-import net.astrum.ModMain;
+import net.astrum.AstrumCore;
 import net.astrum.common.blocks.base.BlockFarmland;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -89,7 +89,7 @@ public class BlocksHelper {
         return  b == Blocks.NETHERRACK ||
                 b == Blocks.NETHER_QUARTZ_ORE ||
                 b == Blocks.SOUL_SAND ||
-                Registry.BLOCK.getId(b).getNamespace().equals(ModMain.MOD_ID);
+                Registry.BLOCK.getId(b).getNamespace().equals(AstrumCore.MOD_ID);
     }
 
     public static void setWithoutUpdate(World world, BlockPos pos, BlockState state)

@@ -1,10 +1,11 @@
 package net.astrum.common.registry;
 
-import net.astrum.ModMain;
+import net.astrum.AstrumCore;
 import net.astrum.common.blocks.base.*;
 import net.astrum.common.tab.CreativeTab;
-import net.astrum.common.blocks.base.*;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.item.BlockItem;
@@ -15,9 +16,10 @@ import net.minecraft.util.registry.Registry;
 public class BlocksRegistry {
 
     public static final Block GRASS = registerBlock("astrum_grass", new GrassBase());
+    public static final Block DIRT = registerBlock("astrum_dirt", new Block(FabricBlockSettings.copy(Blocks.DIRT)));
 
     public static void register() {
-        makeWoodenBlocks(ModMain.MOD_ID, MaterialColor.BLUE_TERRACOTTA);
+        makeWoodenBlocks(AstrumCore.MOD_ID, MaterialColor.BLUE_TERRACOTTA);
     }
 
     private static void makeWoodenBlocks(String name, MaterialColor color) {
@@ -37,14 +39,14 @@ public class BlocksRegistry {
 
     private static Block registerBlock(String name, Block block)
     {
-        Registry.register(Registry.BLOCK, new Identifier(ModMain.MOD_ID, name), block);
+        Registry.register(Registry.BLOCK, new Identifier(AstrumCore.MOD_ID, name), block);
         ItemsRegistry.registerItem(name, new BlockItem(block, new Item.Settings().group(CreativeTab.TAB)));
         return block;
     }
 
     private static Block registerBlockNI(String name, Block block)
     {
-        Registry.register(Registry.BLOCK, new Identifier(ModMain.MOD_ID, name), block);
+        Registry.register(Registry.BLOCK, new Identifier(AstrumCore.MOD_ID, name), block);
         return block;
     }
 }

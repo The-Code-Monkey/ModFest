@@ -1,5 +1,6 @@
 package net.astrum;
 
+import net.astrum.common.registry.EntityRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.astrum.common.registry.BlocksRegistry;
 import net.astrum.common.registry.ItemsRegistry;
@@ -8,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 
-public class ModMain implements ModInitializer {
+public class AstrumCore implements ModInitializer {
 
 	public static final Tag<Item> SHEARS = TagRegistry.item(new Identifier("fabric", "shears"));
 	public static final String MOD_ID = "astrum";
@@ -17,5 +18,6 @@ public class ModMain implements ModInitializer {
 	public void onInitialize() {
 		BlocksRegistry.register();
 		ItemsRegistry.register();
+		EntityRegistry.register();
 	}
 }

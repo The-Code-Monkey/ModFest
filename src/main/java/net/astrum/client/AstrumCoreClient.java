@@ -3,11 +3,14 @@ package net.astrum.client;
 import net.fabricmc.api.ClientModInitializer;
 import net.astrum.common.enums.AstrumRenderLayer;
 import net.astrum.common.registry.EntityRenderRegistry;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.registry.Registry;
 
-public class ModMainClient implements ClientModInitializer {
+@Environment(EnvType.CLIENT)
+public class AstrumCoreClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient()

@@ -1,6 +1,7 @@
 {
   "itemGroup.astrum.items": "Astrum",
   "block.astrum.astrum_grass": "Astrum Grass",
+  "block.astrum.astrum_dirt": "Astrum Dirt",
   "block.astrum.astrum_stripped_log": "Astrum Stripped Log",
   "block.astrum.astrum_log": "Astrum Log",
   "block.astrum.astrum_planks": "Astrum Planks",
@@ -12,5 +13,9 @@
   "block.astrum.astrum_button": "Astrum Button",
   "block.astrum.astrum_fence": "Astrum Fence",
   "block.astrum.astrum_gate": "Astrum Gate",
-  "block.astrum.astrum_leaves": "Astrum Leaves"
+  "block.astrum.astrum_leaves": "Astrum Leaves",
+
+  "item.astrum.spawn_egg_triffid": "Triffid Spawn Egg",
+
+  "entity.astrum.triffid": "Triffid"
 }
