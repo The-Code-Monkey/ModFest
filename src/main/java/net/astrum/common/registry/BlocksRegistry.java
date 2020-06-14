@@ -5,7 +5,6 @@ import net.astrum.common.blocks.base.*;
 import net.astrum.common.tab.CreativeTab;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.MaterialColor;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.item.BlockItem;
@@ -13,10 +12,12 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import static net.minecraft.block.Blocks.DIRT;
+
 public class BlocksRegistry {
 
-    public static final Block GRASS = registerBlock("astrum_grass", new GrassBase());
-    public static final Block DIRT = registerBlock("astrum_dirt", new Block(FabricBlockSettings.copy(Blocks.DIRT)));
+    public static final Block ASTRUM_GRASS = registerBlock("astrum_grass", new GrassBase());
+    public static final Block ASTRUM_DIRT = registerBlock("astrum_dirt", new BlockBase(FabricBlockSettings.copy(DIRT)));
 
     public static void register() {
         makeWoodenBlocks(AstrumCore.MOD_ID, MaterialColor.BLUE_TERRACOTTA);

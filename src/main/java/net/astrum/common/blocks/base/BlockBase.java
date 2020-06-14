@@ -5,21 +5,21 @@ import net.astrum.common.enums.AstrumRenderLayer;
 import net.minecraft.block.Block;
 
 public class BlockBase extends Block implements IRenderTypeable {
-    private boolean isClimmable = false;
+    private boolean isClimbable = false;
     private AstrumRenderLayer layer = AstrumRenderLayer.SOLID;
 
     public BlockBase(Settings settings) {
         super(settings);
     }
 
-    public void setClimmable(boolean climmable)
+    public void setClimbable(boolean climbable)
     {
-        this.isClimmable = climmable;
+        this.isClimbable = climbable;
     }
 
-    public boolean isClimmable()
+    public boolean isClimbable()
     {
-        return isClimmable;
+        return isClimbable;
     }
 
     public void setRenderLayer(AstrumRenderLayer layer)

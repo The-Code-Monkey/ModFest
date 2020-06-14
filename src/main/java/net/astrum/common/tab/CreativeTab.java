@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 public class CreativeTab {
     public static final ItemGroup TAB = FabricItemGroupBuilder.create(
             new Identifier(AstrumCore.MOD_ID, "items"))
-            .icon(() -> new ItemStack(BlocksRegistry.GRASS))
+            .icon(() -> new ItemStack(BlocksRegistry.ASTRUM_GRASS))
             .appendItems(stacks ->
             {
                 for (Item i: ItemsRegistry.MOD_BLOCKS)

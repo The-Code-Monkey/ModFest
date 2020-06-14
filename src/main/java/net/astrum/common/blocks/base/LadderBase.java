@@ -32,7 +32,7 @@ public class LadderBase extends BlockBaseNotFull {
     public LadderBase(Block block) {
         super(FabricBlockSettings.copy(block).nonOpaque());
         this.setRenderLayer(AstrumRenderLayer.CUTOUT);
-        this.setClimmable(true);
+        this.setClimbable(true);
     }
 
     @Override
