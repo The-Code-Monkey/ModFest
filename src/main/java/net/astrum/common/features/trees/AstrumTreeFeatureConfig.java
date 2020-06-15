@@ -11,14 +11,18 @@ public class AstrumTreeFeatureConfig implements FeatureConfig {
             return treeFeatureConfig.trunk;
         }), BlockStateProvider.CODEC.fieldOf("leaves_provider").forGetter((treeFeatureConfig) -> {
             return treeFeatureConfig.leaves;
+        }), AstrumTreeShape.CODEC.fieldOf("shape").withDefault(AstrumTreeShape.NORMAL).forGetter((treeFeatureConfig) -> {
+            return treeFeatureConfig.shape;
         })).apply(instance, AstrumTreeFeatureConfig::new);
     });
 
     public final BlockStateProvider trunk;
     public final BlockStateProvider leaves;
+    public final AstrumTreeShape shape;
 
-    public AstrumTreeFeatureConfig(BlockStateProvider trunk, BlockStateProvider leaves) {
+    public AstrumTreeFeatureConfig(BlockStateProvider trunk, BlockStateProvider leaves, AstrumTreeShape shape) {
         this.trunk = trunk;
         this.leaves = leaves;
+        this.shape = shape;
     }
 }

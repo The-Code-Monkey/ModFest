@@ -1,19 +1,22 @@
 package net.astrum.common.registry;
 
 import net.astrum.AstrumCore;
+import net.astrum.common.decorators.AstrumTreeDecorator;
+import net.astrum.common.features.trees.AstrumTreeFeature;
+import net.astrum.common.features.trees.AstrumTreeFeatureConfig;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
+import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FeatureConfig;
 
 public class FeaturesRegistry {
-//    public static AstrumTreeFeature ASTRUM_TREE;
-//
-//    public static void register() {
-//        ASTRUM_TREE = registerTree("astrum", new AstrumTreeFeature(BranchedTreeFeatureConfig::deserialize));
-//    }
-//
-//    public static <T extends Feature<FC>, FC extends FeatureConfig> T registerTree(String name, T feature) {
-//        return Registry.register(Registry.FEATURE, new Identifier(AstrumCore.MOD_ID, name + "_tree"), feature);
-//    }
+    public static final Decorator<ChanceDecoratorConfig> ASTRUM_TREE_DECORATOR = new AstrumTreeDecorator(ChanceDecoratorConfig.field_24980);
+    public static final Feature<AstrumTreeFeatureConfig> ASTRUM_TREE = new AstrumTreeFeature(AstrumTreeFeatureConfig.CODEC);
+
+    public static void register() {
+        Registry.register(Registry.DECORATOR, new Identifier(AstrumCore.MOD_ID, "astrum_tree_decorator"), ASTRUM_TREE_DECORATOR);
+
+        Registry.register(Registry.FEATURE, new Identifier(AstrumCore.MOD_ID, "astrum_tree"), ASTRUM_TREE);
+    }
 }

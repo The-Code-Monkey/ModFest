@@ -1,6 +1,7 @@
 package net.astrum;
 
 import net.astrum.common.registry.EntityRegistry;
+import net.astrum.common.registry.FeaturesRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.astrum.common.registry.BlocksRegistry;
 import net.astrum.common.registry.ItemsRegistry;
@@ -19,5 +20,6 @@ public class AstrumCore implements ModInitializer {
 		BlocksRegistry.register();
 		ItemsRegistry.register();
 		EntityRegistry.register();
+		FeaturesRegistry.register();
 	}
 }
