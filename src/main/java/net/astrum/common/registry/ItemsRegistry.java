@@ -1,23 +1,33 @@
 package net.astrum.common.registry;
 
+
 import net.astrum.AstrumCore;
 import net.astrum.common.helpers.MathHelper;
+import net.astrum.common.items.*;
+import net.astrum.common.materials.AstrumToolMaterials;
 import net.astrum.common.tab.CreativeTab;
 import net.minecraft.entity.EntityType;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 import java.util.ArrayList;
 
 public class ItemsRegistry {
+
     public static final ArrayList<Item> MOD_BLOCKS = new ArrayList<Item>();
     public static final ArrayList<Item> MOD_ITEMS = new ArrayList<Item>();
 
+
     public static final Item SPAWN_TRIFFID = registerItem("spawn_egg_triffid", makeEgg(EntityRegistry.TRIFFID, MathHelper.color(12, 12, 12), MathHelper.color(210, 90, 26)));
+
     public static final Item ALIEN_SCRAP = registerItem("alien_scrap", new Item(new Item.Settings()));
+    public static final Item ALIEN_PICKAXE = registerItem("alien_pickaxe", AstrumPickaxe.alienPickaxe);
+    public static final Item ALIEN_AXE= registerItem("alien_axe", AstrumAxe.alienAxe);
+    public static final Item ALIEN_SHOVEL= registerItem("alien_shovel", AstrumShovel.alienShovel);
+    public static final Item ALIEN_HOE= registerItem("alien_hoe", AstrumHoe.alienHoe);
+    public static final Item ALIEN_SWORD= registerItem("alien_sword", AstrumSword.alienSword);
+
 
     public static void register() {}
 
