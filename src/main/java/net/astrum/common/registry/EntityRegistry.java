@@ -15,7 +15,7 @@ public class EntityRegistry {
     public static final EntityType<EntityTriffid> TRIFFID = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(AstrumCore.MOD_ID, "triffid"),
-            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, EntityTriffid::new).dimensions(EntityDimensions.fixed(0.75F, 0.75F)).build()
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, EntityTriffid::new).dimensions(EntityDimensions.fixed(1.25F, 4F)).build()
     );
 
     public static void register() {
