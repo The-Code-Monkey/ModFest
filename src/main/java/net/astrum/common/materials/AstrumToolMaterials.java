@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
 public enum AstrumToolMaterials implements ToolMaterial {
 
-    ALIEN_SCRAP(3, 2499, 7.0F, 2.5F, 1, () -> {
+    ALIEN_SCRAP(3, 2499, 7.0F, 1.5F, 1, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{ItemsRegistry.ALIEN_SCRAP});
     });
 

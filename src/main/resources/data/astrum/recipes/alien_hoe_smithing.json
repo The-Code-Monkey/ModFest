@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:iron_hoe"
+  },
+  "addition": {
+    "item": "astrum:alien_scrap"
+  },
+  "result": {
+    "item": "astrum:alien_hoe"
+  }
+}

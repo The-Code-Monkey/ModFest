@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:iron_axe"
+  },
+  "addition": {
+    "item": "astrum:alien_scrap"
+  },
+  "result": {
+    "item": "astrum:alien_axe"
+  }
+}
