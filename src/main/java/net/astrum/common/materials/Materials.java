@@ -31,6 +31,7 @@ public class Materials {
     public static AbstractBlock.Settings makeLeaves(MaterialColor color) {
         return FabricBlockSettings.of(COMMON_WOOD, color)
                 .breakByHand(true)
+                .breakByTool(FabricToolTags.HOES)
                 .breakByTool(AstrumCore.SHEARS)
                 .sounds(BlockSoundGroup.GRASS)
                 .nonOpaque()
