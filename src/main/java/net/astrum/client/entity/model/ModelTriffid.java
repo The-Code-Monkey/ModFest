@@ -162,8 +162,9 @@ public class ModelTriffid extends EntityModel<EntityTriffid> {
 	}
 
     @Override
-    public void setAngles(EntityTriffid entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-
+    public void setAngles(EntityTriffid livingEntity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+        this.pitch = livingEntity.getLeaningPitch(h);
+	super.animateModel(livingEntity, f, g, h)
     }
 
     @Override
