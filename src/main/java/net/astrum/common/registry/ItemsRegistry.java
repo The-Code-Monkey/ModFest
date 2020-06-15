@@ -17,6 +17,7 @@ public class ItemsRegistry {
     public static final ArrayList<Item> MOD_ITEMS = new ArrayList<Item>();
 
     public static final Item SPAWN_TRIFFID = registerItem("spawn_egg_triffid", makeEgg(EntityRegistry.TRIFFID, MathHelper.color(12, 12, 12), MathHelper.color(210, 90, 26)));
+    public static final Item ALIEN_SCRAP = registerItem("alien_scrap", new Item(new Item.Settings()));
 
     public static void register() {}
 
