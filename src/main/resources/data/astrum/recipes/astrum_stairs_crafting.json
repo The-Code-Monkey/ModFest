@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_trapdoor",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "astrum:astrum_planks"
+    }
+  },
+  "result": {
+    "item": "astrum:astrum_stairs",
+    "count": 4
+  }
+}
