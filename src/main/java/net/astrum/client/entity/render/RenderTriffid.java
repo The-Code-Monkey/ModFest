@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 
 public class RenderTriffid extends MobEntityRenderer<EntityTriffid, ModelTriffid> {
     public RenderTriffid(EntityRenderDispatcher entityRenderDispatcher) {
-        super(entityRenderDispatcher, new ModelTriffid(), 0.5f);
+        super(entityRenderDispatcher, new ModelTriffid(), 1.25f);
     }
 
     @Override

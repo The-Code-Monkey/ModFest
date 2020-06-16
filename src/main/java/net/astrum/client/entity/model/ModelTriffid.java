@@ -8,6 +8,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.MathHelper;
 
 public class ModelTriffid extends EntityModel<EntityTriffid>  {
+	private final ModelPart model;
 	private final ModelPart legs;
 	private final ModelPart front_right_leg;
 	private final ModelPart front_right_leg_top;
@@ -41,9 +42,13 @@ public class ModelTriffid extends EntityModel<EntityTriffid>  {
 		textureWidth = 128;
 		textureHeight = 128;
 
+		model = new ModelPart(this);
+		model.yaw = -1.575F;
+
 		// LEGS
 		legs = new ModelPart(this);
 		legs.setPivot(0.0F, 24.0F, 0.0F);
+		model.addChild(legs);
 
 		// LEG 1
 		front_right_leg = new ModelPart(this);
@@ -100,10 +105,12 @@ public class ModelTriffid extends EntityModel<EntityTriffid>  {
 		body = new ModelPart(this);
 		body.setPivot(-1.0F, 24.0F, 0.0F);
 		body.setTextureOffset(0, 90).addCuboid(-3.375F, -26.0F, -5.5787F, 12.0F, 14.0F, 11.0F, 0.0F, false);
+		model.addChild(body);
 
 		// NECK
 		neck = new ModelPart(this);
 		neck.setPivot(9.0F, 12.0F, -3.0F);
+		model.addChild(neck);
 
 		lower_neck = new ModelPart(this);
 		lower_neck.setPivot(-2.0F, 3.0F, 0.0F);
@@ -131,34 +138,35 @@ public class ModelTriffid extends EntityModel<EntityTriffid>  {
 
 		// HEAD
 		head = new ModelPart(this);
-		head.setPivot(0.0F, 24.0F, 0.0F);
+		head.setPivot(0.0F, -31.0F, 0.0F);
+		model.addChild(head);
 
 		back = new ModelPart(this);
-		back.setPivot(0.0F, 0.0F, 0.0F);
+		back.setPivot(0.0F, 55.0F, 0.0F);
 		head.addChild(back);
-		back.setTextureOffset(0, 54).addCuboid(-7.0F, -59.5F, -3.75F, 7.0F, 8.0F, 8.0F, 0.0F, false);
+		back.setTextureOffset(0, 54).addCuboid(-8.0F, -63.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.0F, false);
 
 		front = new ModelPart(this);
 		front.setPivot(0.0F, 0.0F, 0.0F);
 		head.addChild(front);
-		front.setTextureOffset(0, 44).addCuboid(-16.25F, -60.25F, -3.25F, 11.0F, 3.0F, 7.0F, 0.0F, false);
+		front.setTextureOffset(0, 44).addCuboid(-16.25F, -9.5F, -3.25F, 11.0F, 3.0F, 7.0F, 0.0F, false);
 
 		front_bottom_right = new ModelPart(this);
-		front_bottom_right.setPivot(-10.75F, -53.75F, -3.75F);
+		front_bottom_right.setPivot(-10.75F, 0.0F, -3.75F);
 		front.addChild(front_bottom_right);
 		setRotationAngle(front_bottom_right, -1.0297F, 0.0F, 0.0F);
-		front_bottom_right.setTextureOffset(0, 44).addCuboid(-5.5F, -1.9286F, -3.2425F, 11.0F, 3.0F, 7.0F, 0.0F, false);
+		front_bottom_right.setTextureOffset(0, 44).addCuboid(-5.36F, -2.7286F, -5.7425F, 11.0F, 3.0F, 7.0F, 0.0F, false);
 
 		front_bottom_left = new ModelPart(this);
-		front_bottom_left.setPivot(-10.75F, -53.4069F, 3.3358F);
+		front_bottom_left.setPivot(-10.75F, 0.0F, 3.3358F);
 		front.addChild(front_bottom_left);
 		setRotationAngle(front_bottom_left, 1.0297F, 0.0F, 0.0F);
-		front_bottom_left.setTextureOffset(0, 44).addCuboid(-5.5F, -1.2753F, -3.0177F, 11.0F, 3.0F, 7.0F, 0.0F, false);
+		front_bottom_left.setTextureOffset(0, 44).addCuboid(-5.3F, -2.3753F, -1.9177F, 11.0F, 3.0F, 7.0F, 0.0F, false);
 
 		tongue = new ModelPart(this);
 		tongue.setPivot(0.0F, 0.0F, 0.0F);
 		head.addChild(tongue);
-		tongue.setTextureOffset(0, 88).addCuboid(-29.75F, -56.25F, -0.25F, 23.0F, 1.0F, 1.0F, 0.0F, false);
+		tongue.setTextureOffset(0, 88).addCuboid(-29.75F, -4.5F, -0.25F, 23.0F, 1.0F, 1.0F, 0.0F, false);
 		
 	}
 
@@ -169,21 +177,23 @@ public class ModelTriffid extends EntityModel<EntityTriffid>  {
 	}
 
 	@Override
-	public void animateModel(EntityTriffid livingEntity, float f, float g, float h) {
+	public void animateModel(EntityTriffid entity, float f, float g, float h) {
 	}
 
 	@Override
-	public void setAngles(EntityTriffid entity, float f, float g, float h, float i, float j) {
+	public void setAngles(EntityTriffid entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
 		boolean rollTooBig = entity.getRoll() > 4;
 		boolean isSwimming = entity.isSwimming();
-		this.head.yaw = i * 0.017453292F;
+
+		this.head.yaw = headYaw * 0.017453292F;
+		this.head.roll = headPitch * -0.017453292F;
 		if (rollTooBig) {
 			this.head.pitch = -0.7853982F;
 		} else if (this.leaningPitch > 0.0F) {
 			if (isSwimming) {
 				this.head.pitch = this.lerpAngle(this.head.pitch, -0.7853982F, this.leaningPitch);
 			} else {
-				this.head.pitch = this.lerpAngle(this.head.pitch, j * 0.017453292F, this.leaningPitch);
+				this.head.pitch = this.lerpAngle(this.head.pitch, headPitch * 0.017453292F, this.leaningPitch);
 			}
 		}
 
@@ -201,8 +211,6 @@ public class ModelTriffid extends EntityModel<EntityTriffid>  {
 		if (k < 1.0F) {
 			k = 1.0F;
 		}
-
-		this.rear_leg.pitch = MathHelper.cos(f * 0.6662F + 3.1415927F) * 2.0F * g * 0.5F / k;
 	}
 
 	protected float lerpAngle(float from, float to, float position)
@@ -226,12 +234,14 @@ public class ModelTriffid extends EntityModel<EntityTriffid>  {
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
 //		matrices.translate(0, 1.125, 0);
 
-        legs.render(matrices, vertices, light, overlay);
+		model.render(matrices, vertices, light, overlay);
 
-        body.render(matrices, vertices, light, overlay);
-
-        neck.render(matrices, vertices, light, overlay);
-
-        head.render(matrices, vertices, light, overlay);
+//        legs.render(matrices, vertices, light, overlay);
+//
+//        body.render(matrices, vertices, light, overlay);
+//
+//        neck.render(matrices, vertices, light, overlay);
+//
+//        head.render(matrices, vertices, light, overlay);
     }
 }
