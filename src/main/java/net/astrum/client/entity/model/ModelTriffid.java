@@ -5,18 +5,19 @@ import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.math.MathHelper;
 
-public class ModelTriffid extends EntityModel<EntityTriffid> {
+public class ModelTriffid extends EntityModel<EntityTriffid>  {
 	private final ModelPart legs;
-	private final ModelPart leg1;
-	private final ModelPart top;
-	private final ModelPart bottom;
-	private final ModelPart leg2;
-	private final ModelPart top2;
-	private final ModelPart bottom2;
-	private final ModelPart leg3;
-	private final ModelPart top3;
-	private final ModelPart bottom3;
+	private final ModelPart front_right_leg;
+	private final ModelPart front_right_leg_top;
+	private final ModelPart front_right_leg_bottom;
+	private final ModelPart front_left_leg;
+	private final ModelPart front_left_leg_top;
+	private final ModelPart front_left_leg_bottom;
+	private final ModelPart rear_leg;
+	private final ModelPart rear_leg_top;
+	private final ModelPart rear_leg_bottom;
 	private final ModelPart body;
 	private final ModelPart neck;
 	private final ModelPart lower_neck;
@@ -30,6 +31,12 @@ public class ModelTriffid extends EntityModel<EntityTriffid> {
 	private final ModelPart front_bottom_left;
 	private final ModelPart tongue;
 
+	private float pitch;
+	private double animation;
+	private long preTime;
+	private float maxAngle = 0.1F;
+	public float leaningPitch;
+
 	public ModelTriffid() {
 		textureWidth = 128;
 		textureHeight = 128;
@@ -39,55 +46,55 @@ public class ModelTriffid extends EntityModel<EntityTriffid> {
 		legs.setPivot(0.0F, 24.0F, 0.0F);
 
 		// LEG 1
-		leg1 = new ModelPart(this);
-		leg1.setPivot(-4.0F, 0.0F, 4.0F);
-		legs.addChild(leg1);
-		setRotationAngle(leg1, 0.0F, -0.7854F, 0.0F);
+		front_right_leg = new ModelPart(this);
+		front_right_leg.setPivot(-4.0F, 0.0F, 4.0F);
+		legs.addChild(front_right_leg);
+		setRotationAngle(front_right_leg, 0.0F, -0.7854F, 0.0F);
 
-		top = new ModelPart(this);
-		top.setPivot(0.0F, 0.0F, 0.0F);
-		leg1.addChild(top);
-		setRotationAngle(top, 0.3491F, 0.0F, 0.0F);
-		top.setTextureOffset(0, 115).addCuboid(-0.8787F, -12.9478F, 2.7565F, 4.0F, 6.0F, 4.0F, 0.0F, false);
+		front_right_leg_top = new ModelPart(this);
+		front_right_leg_top.setPivot(0.0F, 0.0F, 0.0F);
+		front_right_leg.addChild(front_right_leg_top);
+		setRotationAngle(front_right_leg_top, 0.3491F, 0.0F, 0.0F);
+		front_right_leg_top.setTextureOffset(0, 115).addCuboid(-0.8787F, -12.9478F, 2.7565F, 4.0F, 6.0F, 4.0F, 0.0F, false);
 
-		bottom = new ModelPart(this);
-		bottom.setPivot(0.0F, 0.0F, 0.0F);
-		leg1.addChild(bottom);
-		bottom.setTextureOffset(0, 115).addCuboid(-0.8787F, -9.0F, 0.0F, 4.0F, 9.0F, 4.0F, 0.0F, false);
+		front_right_leg_bottom = new ModelPart(this);
+		front_right_leg_bottom.setPivot(0.0F, 0.0F, 0.0F);
+		front_right_leg.addChild(front_right_leg_bottom);
+		front_right_leg_bottom.setTextureOffset(0, 115).addCuboid(-0.8787F, -9.0F, 0.0F, 4.0F, 9.0F, 4.0F, 0.0F, false);
 
 		// LEG 2
-		leg2 = new ModelPart(this);
-		leg2.setPivot(-4.0F, 0.0F, -5.0F);
-		legs.addChild(leg2);
-		setRotationAngle(leg2, 0.0F, 0.7854F, 0.0F);
+		front_left_leg = new ModelPart(this);
+		front_left_leg.setPivot(-4.0F, 0.0F, -5.0F);
+		legs.addChild(front_left_leg);
+		setRotationAngle(front_left_leg, 0.0F, 0.7854F, 0.0F);
 
-		top2 = new ModelPart(this);
-		top2.setPivot(0.0F, 0.0F, 0.0F);
-		leg2.addChild(top2);
-		setRotationAngle(top2, -0.3491F, 0.0F, 0.0F);
-		top2.setTextureOffset(0, 115).addCuboid(-1.9393F, -13.2899F, -7.0097F, 4.0F, 6.0F, 4.0F, 0.0F, false);
+		front_left_leg_top = new ModelPart(this);
+		front_left_leg_top.setPivot(0.0F, 0.0F, 0.0F);
+		front_left_leg.addChild(front_left_leg_top);
+		setRotationAngle(front_left_leg_top, -0.3491F, 0.0F, 0.0F);
+		front_left_leg_top.setTextureOffset(0, 115).addCuboid(-1.9393F, -13.2899F, -7.0097F, 4.0F, 6.0F, 4.0F, 0.0F, false);
 
-		bottom2 = new ModelPart(this);
-		bottom2.setPivot(0.0F, 0.0F, 0.0F);
-		leg2.addChild(bottom2);
-		bottom2.setTextureOffset(0, 115).addCuboid(-1.9393F, -9.0F, -4.0607F, 4.0F, 9.0F, 4.0F, 0.0F, false);
+		front_left_leg_bottom = new ModelPart(this);
+		front_left_leg_bottom.setPivot(0.0F, 0.0F, 0.0F);
+		front_left_leg.addChild(front_left_leg_bottom);
+		front_left_leg_bottom.setTextureOffset(0, 115).addCuboid(-1.9393F, -9.0F, -4.0607F, 4.0F, 9.0F, 4.0F, 0.0F, false);
 
 		// LEG 3
-		leg3 = new ModelPart(this);
-		leg3.setPivot(3.0F, 0.0F, 1.0F);
-		legs.addChild(leg3);
-		setRotationAngle(leg3, 0.0F, 1.5708F, 0.0F);
+		rear_leg = new ModelPart(this);
+		rear_leg.setPivot(3.0F, 0.0F, 1.0F);
+		legs.addChild(rear_leg);
+		setRotationAngle(rear_leg, 0.0F, 1.5708F, 0.0F);
 
-		top3 = new ModelPart(this);
-		top3.setPivot(0.0F, 0.0F, 0.0F);
-		leg3.addChild(top3);
-		setRotationAngle(top3, 0.3491F, 0.0F, 0.0F);
-		top3.setTextureOffset(0, 115).addCuboid(-1.0F, -11.2401F, 8.3062F, 4.0F, 6.0F, 4.0F, 0.0F, false);
+		rear_leg_top = new ModelPart(this);
+		rear_leg_top.setPivot(0.0F, 0.0F, 0.0F);
+		rear_leg.addChild(rear_leg_top);
+		setRotationAngle(rear_leg_top, 0.3491F, 0.0F, 0.0F);
+		rear_leg_top.setTextureOffset(0, 115).addCuboid(-1.0F, -11.2401F, 8.3062F, 4.0F, 6.0F, 4.0F, 0.0F, false);
 
-		bottom3 = new ModelPart(this);
-		bottom3.setPivot(0.0F, 0.0F, 0.0F);
-		leg3.addChild(bottom3);
-		bottom3.setTextureOffset(0, 115).addCuboid(-1.0F, -9.0F, 6.0F, 4.0F, 9.0F, 4.0F, 0.0F, false);
+		rear_leg_bottom = new ModelPart(this);
+		rear_leg_bottom.setPivot(0.0F, 0.0F, 0.0F);
+		rear_leg.addChild(rear_leg_bottom);
+		rear_leg_bottom.setTextureOffset(0, 115).addCuboid(-1.0F, -9.0F, 6.0F, 4.0F, 9.0F, 4.0F, 0.0F, false);
 
 		// BODY
 		body = new ModelPart(this);
@@ -161,13 +168,61 @@ public class ModelTriffid extends EntityModel<EntityTriffid> {
 		part.yaw = y;
 	}
 
-    @Override
-    public void setAngles(EntityTriffid livingEntity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-        this.pitch = livingEntity.getLeaningPitch(h);
-	super.animateModel(livingEntity, f, g, h)
-    }
+	@Override
+	public void animateModel(EntityTriffid livingEntity, float f, float g, float h) {
+	}
 
-    @Override
+	@Override
+	public void setAngles(EntityTriffid entity, float f, float g, float h, float i, float j) {
+		boolean rollTooBig = entity.getRoll() > 4;
+		boolean isSwimming = entity.isSwimming();
+		this.head.yaw = i * 0.017453292F;
+		if (rollTooBig) {
+			this.head.pitch = -0.7853982F;
+		} else if (this.leaningPitch > 0.0F) {
+			if (isSwimming) {
+				this.head.pitch = this.lerpAngle(this.head.pitch, -0.7853982F, this.leaningPitch);
+			} else {
+				this.head.pitch = this.lerpAngle(this.head.pitch, j * 0.017453292F, this.leaningPitch);
+			}
+		}
+
+		this.body.yaw = 0.0F;
+		this.rear_leg.pivotZ = 0.0F;
+		this.rear_leg.pivotX = -0.5F;
+
+		float k = 1.0F;
+		if (rollTooBig) {
+			k = (float)entity.getVelocity().lengthSquared();
+			k /= 0.2F;
+			k *= k * k;
+		}
+
+		if (k < 1.0F) {
+			k = 1.0F;
+		}
+
+		this.rear_leg.pitch = MathHelper.cos(f * 0.6662F + 3.1415927F) * 2.0F * g * 0.5F / k;
+	}
+
+	protected float lerpAngle(float from, float to, float position)
+	{
+		float angle = (to - from) % 6.2831855F;
+
+		if (angle < -3.1415927F)
+		{
+			angle += 6.2831855F;
+		}
+
+		if (angle >= 3.1415927F)
+		{
+			angle -= 6.2831855F;
+		}
+
+		return from + position * angle;
+	}
+
+	@Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
 //		matrices.translate(0, 1.125, 0);
 
