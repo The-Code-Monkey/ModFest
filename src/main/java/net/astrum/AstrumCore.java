@@ -1,10 +1,7 @@
 package net.astrum;
 
-import net.astrum.common.registry.EntityRegistry;
-import net.astrum.common.registry.FeaturesRegistry;
+import net.astrum.common.registry.*;
 import net.fabricmc.api.ModInitializer;
-import net.astrum.common.registry.BlocksRegistry;
-import net.astrum.common.registry.ItemsRegistry;
 import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.tag.Tag;
@@ -21,5 +18,6 @@ public class AstrumCore implements ModInitializer {
 		ItemsRegistry.register();
 		EntityRegistry.register();
 		FeaturesRegistry.register();
+		BiomesRegistry.register();
 	}
 }

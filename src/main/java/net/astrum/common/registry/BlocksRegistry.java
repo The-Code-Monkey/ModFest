@@ -22,15 +22,15 @@ public class BlocksRegistry {
     public static final Block METEOR_STONE = registerBlock("meteor_stone", new BlockBase(FabricBlockSettings.copy(GRANITE)));
     public static final Block ALIEN_SCRAP_ORE = registerBlock("alien_scrap_ore", new BlockBase(FabricBlockSettings.copy(IRON_ORE)));
 
+    public static final Block STRIPPED_LOG = registerBlock(AstrumCore.MOD_ID + "_stripped_log", new PillarBase(MaterialColor.BLUE_TERRACOTTA));
+    public static final Block LOG = registerBlock(AstrumCore.MOD_ID + "_log", new LogStripableBase(MaterialColor.BLUE_TERRACOTTA, STRIPPED_LOG));
+    public static final Block LEAVES = registerBlock(AstrumCore.MOD_ID + "_leaves", new LeavesBase(MaterialColor.BLUE, LOG, STRIPPED_LOG));
 
     public static void register() {
         makeWoodenBlocks(AstrumCore.MOD_ID, MaterialColor.BLUE_TERRACOTTA);
     }
 
     private static void makeWoodenBlocks(String name, MaterialColor color) {
-        final Block STRIPPED_LOG = registerBlock(name + "_stripped_log", new PillarBase(color));
-        final Block LOG = registerBlock(name + "_log", new LogStripableBase(color, STRIPPED_LOG));
-        final Block LEAVES = registerBlock(name + "_leaves", new LeavesBase(MaterialColor.BLUE, LOG, STRIPPED_LOG));
         final Block PLANKS = registerBlock(name + "_planks", new PlankBase(color));
         final Block STAIRS = registerBlock(name + "_stairs", new WoodStairsBase(PLANKS));
         final Block SLAB = registerBlock(name + "_slab", new WoodSlabBase(PLANKS));
