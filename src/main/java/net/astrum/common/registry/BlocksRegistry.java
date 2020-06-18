@@ -54,9 +54,9 @@ public class BlocksRegistry {
         return block;
     }
 
-    private static Block registerBlockNI(String name, Block block)
-    {
-        Registry.register(Registry.BLOCK, new Identifier(AstrumCore.MOD_ID, name), block);
-        return block;
-    }
+    // private static Block registerBlockNI(String name, Block block)
+    // {
+    //     Registry.register(Registry.BLOCK, new Identifier(AstrumCore.MOD_ID, name), block);
+    //     return block;
+    // }
 }
