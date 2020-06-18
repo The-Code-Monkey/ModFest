@@ -39,7 +39,7 @@ public class EntityTriffid extends HostileEntity implements RangedAttackMob {
     public void attack(LivingEntity target, float pullProgress) {
         EntityTriffidProjectile projectile = EntityRegistry.TRIFFID_PROJECTILE.create(world);
         assert projectile != null;
-        projectile.updatePositionAndAngles(getX(), getEyeY(), getZ(), 0, 0);
+        projectile.updatePositionAndAngles(getX(), getEyeY() + 0.5D, getZ(), 0, 0);
         projectile.setParams(this, target);
         world.spawnEntity(projectile);
         // PLAY SOUND
