@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "astrum:item/astrum_sapling"
+  }
+}
