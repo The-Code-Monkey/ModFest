@@ -88,7 +88,6 @@ public class LadderBase extends BlockBaseNotFull {
         BlockPos blockPos = ctx.getBlockPos();
         FluidState fluidState = ctx.getWorld().getFluidState(ctx.getBlockPos());
         Direction[] var6 = ctx.getPlacementDirections();
-        int var7 = var6.length;
 
         for (Direction direction : var6) {
             if (direction.getAxis().isHorizontal()) {
