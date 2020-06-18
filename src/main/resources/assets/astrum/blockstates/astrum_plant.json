@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "astrum:block/astrum_plant" }
+  }
+}
