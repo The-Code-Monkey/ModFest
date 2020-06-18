@@ -16,6 +16,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.RandomFeatureConfig;
 import net.minecraft.world.gen.feature.RandomFeatureEntry;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.surfacebuilder.TernarySurfaceConfig;
 
 import java.util.Collections;
 
@@ -30,6 +31,12 @@ public class AstrumBiomeFeatures {
     public static final AlienScrapOreConfig ALIENT_SCRAP_ORE = new AlienScrapOreConfig(BlocksRegistry.ALIEN_SCRAP_ORE.getDefaultState(), 9);
 
     public static final AstrumTreeFeatureConfig ASTRUM_TREE_FEATURE_CONFIG = new AstrumTreeFeatureConfig(ASTRUM_LOG, ASTRUM_LEAVES, AstrumTreeShape.NORMAL);
+
+    public static final TernarySurfaceConfig ASTRUM_SURFACE = new TernarySurfaceConfig(
+            BlocksRegistry.ASTRUM_GRASS.getDefaultState(),
+            BlocksRegistry.ASTRUM_DIRT.getDefaultState(),
+            BlocksRegistry.METEOR_STONE.getDefaultState()
+    );
 
     public static void addOres(Biome biome) {
         ConfiguredFeature<?, ?> scrapOre = FeaturesRegistry.ALIEN_SCRAP_ORE.configure(ALIENT_SCRAP_ORE);
