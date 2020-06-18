@@ -20,7 +20,7 @@ import net.minecraft.world.RayTraceContext;
 import net.minecraft.world.World;
 
 public class EntityTriffidProjectile extends FlyingEntity {
-    private static final int MAX_LIFE_TIME = 60;
+    private static final int MAX_LIFE_TIME = 100;
     private int lifeTime = 0;
 
     public EntityTriffidProjectile(EntityType<? extends EntityTriffidProjectile> type, World world) {
@@ -30,6 +30,7 @@ public class EntityTriffidProjectile extends FlyingEntity {
 
     public static DefaultAttributeContainer.Builder getAttributeContainer() {
         return LivingEntity.createLivingAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 5.0D)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 30.0D);
     }
 
@@ -55,16 +56,22 @@ public class EntityTriffidProjectile extends FlyingEntity {
     @Override
     public void tick() {
         super.tick();
-        world.addParticle(ParticleTypes.LARGE_SMOKE,
+
+        world.addParticle(ParticleTypes.BUBBLE_POP,
                 getX() + random.nextGaussian() * 0.2,
                 getY() + random.nextGaussian() * 0.2,
                 getZ() + random.nextGaussian() * 0.2,
                 0, 0, 0);
-        world.addParticle(ParticleTypes.SMOKE,
-                getX() + random.nextGaussian() * 0.2,
-                getY() + random.nextGaussian() * 0.2,
-                getZ() + random.nextGaussian() * 0.2,
+        world.addParticle(ParticleTypes.BUBBLE_POP,
+                getX() + random.nextGaussian() * 0.3,
+                getY() + random.nextGaussian() * 0.3,
+                getZ() + random.nextGaussian() * 0.3,
                 0, 0, 0);
+        world.addParticle(ParticleTypes.BUBBLE_POP,
+                getX() + random.nextGaussian() * 0.5,
+                getY() + random.nextGaussian() * 0.5,
+                getZ() + random.nextGaussian() * 0.5,
+                0.1, 0.1, 0.1);
 
         HitResult hitResult = ProjectileUtil.getCollision(this, (entity) -> entity.isAlive() && entity instanceof LivingEntity, RayTraceContext.ShapeType.COLLIDER);
 
@@ -89,22 +96,13 @@ public class EntityTriffidProjectile extends FlyingEntity {
     protected void onCollision(HitResult hitResult) {
         HitResult.Type type = hitResult.getType();
         if (type == HitResult.Type.BLOCK) {
-            for (int i = 0; i < 10; i++) {
-                world.addParticle(ParticleTypes.LARGE_SMOKE,
-                        getX() + random.nextGaussian() * 0.5,
-                        getY() + random.nextGaussian() * 0.5,
-                        getZ() + random.nextGaussian() * 0.5,
-                        random.nextGaussian() * 0.2,
-                        random.nextGaussian() * 0.2,
-                        random.nextGaussian() * 0.2);
-            }
             effectKill();
         } else if (type == HitResult.Type.ENTITY) {
             Entity entity = ((EntityHitResult) hitResult).getEntity();
             if (entity != this && entity instanceof LivingEntity && !(entity instanceof EntityTriffid)) {
                 LivingEntity living = (LivingEntity) entity;
                 if (!(living.hasStatusEffect(StatusEffects.POISON))) {
-                    living.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20));
+                    living.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 3));
                 }
                 effectKill();
             }
@@ -113,7 +111,7 @@ public class EntityTriffidProjectile extends FlyingEntity {
 
     private void effectKill() {
         for (int i = 0; i < 10; i++) {
-            world.addParticle(ParticleTypes.ENTITY_EFFECT,
+            world.addParticle(ParticleTypes.BUBBLE_POP,
                     getX() + random.nextGaussian() * 0.5,
                     getY() + random.nextGaussian() * 0.5,
                     getZ() + random.nextGaussian() * 0.5,
