@@ -18,8 +18,14 @@
   "block.astrum.astrum_gate": "Astrum Gate",
   "block.astrum.astrum_leaves": "Astrum Leaves",
 
-  "item.astrum.spawn_egg_triffid": "Triffid Spawn Egg",
-  "item.astrum.alien_scrap": "Alien Scrap",
+  "item.astrum.triffid_spawn_egg": "Triffid Spawn Egg",
+  "item.astrum.alien_scrap": "Reclaimed Alien Scrap",
+  "item.astrum.alien_sword": "Scrap-plated Sword",
+  "item.astrum.alien_pickaxe": "Scrap-plated Pickaxe",
+  "item.astrum.alien_axe": "Scrap-plated Axe",
+  "item.astrum.alien_shovel": "Scrap-plated Shovel",
+  "item.astrum.alien_hoe": "Scrap-plated Hoe",
+
 
   "entity.astrum.triffid": "Triffid"
 }
