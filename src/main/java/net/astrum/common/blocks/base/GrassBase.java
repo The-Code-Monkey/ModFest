@@ -10,14 +10,14 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.tag.FluidTags;
+// import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
-import net.minecraft.world.chunk.light.ChunkLightProvider;
+// import net.minecraft.world.WorldView;
+// import net.minecraft.world.chunk.light.ChunkLightProvider;
 import net.minecraft.world.gen.feature.BlockPileFeatureConfig;
 
 import java.util.Random;
@@ -50,20 +50,20 @@ public class GrassBase extends BlockBase implements Fertilizable {
         return state;
     }
 
-    private static boolean canSurvive(BlockState state, WorldView view, BlockPos pos) {
-        BlockPos posAbove = pos.up();
-        BlockState stateAbove = view.getBlockState(posAbove);
-        if (stateAbove.getBlock() == Blocks.SNOW && stateAbove.get(SnowBlock.LAYERS) == 1) {
-            return true;
-        }
-        int i = ChunkLightProvider.getRealisticOpacity(view, state, pos, stateAbove, posAbove, Direction.UP, stateAbove.getOpacity(view, posAbove));
-        return i < view.getMaxLightLevel();
-    }
+    // private static boolean canSurvive(BlockState state, WorldView view, BlockPos pos) {
+    //     BlockPos posAbove = pos.up();
+    //     BlockState stateAbove = view.getBlockState(posAbove);
+    //     if (stateAbove.getBlock() == Blocks.SNOW && stateAbove.get(SnowBlock.LAYERS) == 1) {
+    //         return true;
+    //     }
+    //     int i = ChunkLightProvider.getRealisticOpacity(view, state, pos, stateAbove, posAbove, Direction.UP, stateAbove.getOpacity(view, posAbove));
+    //     return i < view.getMaxLightLevel();
+    // }
 
-    private static boolean canSpread(BlockState state, WorldView view, BlockPos pos) {
-        BlockPos blockPos = pos.up();
-        return canSurvive(state, view, pos) && !view.getFluidState(blockPos).matches(FluidTags.WATER);
-    }
+    // private static boolean canSpread(BlockState state, WorldView view, BlockPos pos) {
+    //     BlockPos blockPos = pos.up();
+    //     return canSurvive(state, view, pos) && !view.getFluidState(blockPos).matches(FluidTags.WATER);
+    // }
 
     @Override
     public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {

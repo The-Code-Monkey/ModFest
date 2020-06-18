@@ -2,7 +2,6 @@ package net.astrum.common.blocks.base;
 
 import net.astrum.common.enums.AstrumRenderLayer;
 import net.astrum.common.materials.Materials;
-import net.astrum.common.registry.BlocksRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
