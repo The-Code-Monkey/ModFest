@@ -21,8 +21,8 @@ public class BlocksRegistry {
     public static final Block ALIEN_SCRAP_ORE = registerBlock("alien_scrap_ore", new BlockBase(FabricBlockSettings.copy(IRON_ORE).nonOpaque()));
     public static final Block CHISELED_METEOR_STONE = registerBlock("chiseled_meteor_stone", new BlockBase(FabricBlockSettings.copy(CHISELED_STONE_BRICKS)));
     public static final Block METEOR_STONE_BRICKS = registerBlock("meteor_stone_bricks", new BlockBase(FabricBlockSettings.copy(GRANITE)));
-    public static final Block ASTRUM_SAPLING = registerBlock("astrum_sapling", new BlockBase(FabricBlockSettings.copy(OAK_SAPLING).nonOpaque()));
-    public static final Block ASTRUM_PLANT = registerBlock("astrum_plant", new BlockBase(FabricBlockSettings.copyOf(GRASS).nonOpaque()));
+    public static final Block ASTRUM_SAPLING = registerBlock("astrum_sapling", new PlantBase(OAK_SAPLING));
+    public static final Block ASTRUM_PLANT = registerBlock("astrum_plant", new PlantBase(GRASS));
     //public static final Block FIREMOSS = registerBlock("firemoss", new BlockBase(FabricBlockSettings.copy(VINE)));
 
     public static final Block STRIPPED_LOG = registerBlock(AstrumCore.MOD_ID + "_stripped_log", new PillarBase(MaterialColor.BLUE_TERRACOTTA));
