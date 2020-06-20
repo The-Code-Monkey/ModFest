@@ -34,7 +34,7 @@ public class PlantBase extends BlockBase{
     }
 
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOf(BlocksRegistry.ASTRUM_DIRT)|| floor.isOf(BlocksRegistry.ASTRUM_GRASS);
+        return floor.isOf(Blocks.DIRT)|| floor.isOf(Blocks.GRASS);
     }
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
