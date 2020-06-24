@@ -5,9 +5,7 @@ import net.astrum.common.blocks.base.*;
 import net.astrum.common.tab.CreativeTab;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.block.Block;
-import net.minecraft.block.MaterialColor;
-import net.minecraft.block.PressurePlateBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -29,7 +27,7 @@ public class BlocksRegistry {
 
     public static final Block STRIPPED_LOG = registerBlock(AstrumCore.MOD_ID + "_stripped_log", new PillarBase(MaterialColor.BLUE_TERRACOTTA));
     public static final Block LOG = registerBlock(AstrumCore.MOD_ID + "_log", new LogStripableBase(MaterialColor.BLUE_TERRACOTTA, STRIPPED_LOG));
-    public static final Block LEAVES = registerBlock(AstrumCore.MOD_ID + "_leaves", new LeavesBase(MaterialColor.BLUE, LOG, STRIPPED_LOG));
+    public static final Block LEAVES = registerBlock(AstrumCore.MOD_ID + "_leaves", new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
 
     public static void register() {
         makeWoodenBlocks(AstrumCore.MOD_ID, MaterialColor.BLUE_TERRACOTTA);

@@ -1,6 +1,9 @@
 package net.astrum.common.biomes;
 
+import net.astrum.common.registry.EntityRegistry;
 import net.astrum.common.registry.FeaturesRegistry;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
@@ -25,5 +28,6 @@ public class AstrumBiome extends Biome {
 
         AstrumBiomeFeatures.addOres(this);
         AstrumBiomeFeatures.addTrees(this);
+        this.addSpawn(SpawnGroup.MONSTER, new Biome.SpawnEntry(EntityRegistry.TRIFFID, 10, 1, 3));
     }
 }
