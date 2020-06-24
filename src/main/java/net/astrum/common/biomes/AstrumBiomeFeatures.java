@@ -11,10 +11,7 @@ import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.ConfiguredDecorator;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.RandomFeatureConfig;
-import net.minecraft.world.gen.feature.RandomFeatureEntry;
+import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.surfacebuilder.TernarySurfaceConfig;
 
@@ -39,10 +36,25 @@ public class AstrumBiomeFeatures {
     );
 
     public static void addOres(Biome biome) {
-        ConfiguredFeature<?, ?> scrapOre = FeaturesRegistry.ALIEN_SCRAP_ORE.configure(ALIENT_SCRAP_ORE);
-        ConfiguredDecorator<?> oreDecorator = Decorator.COUNT_RANGE.configure(new RangeDecoratorConfig(20, 24, 0, 72));
-
-        biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, scrapOre.createDecoratedFeature(oreDecorator));
+        biome.addFeature(
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                Feature.ORE.configure(
+                        new OreFeatureConfig(
+                                OreFeatureConfig.Target.NATURAL_STONE,
+                                BlocksRegistry.ALIEN_SCRAP_ORE.getDefaultState(),
+                                3
+                        )
+                ).createDecoratedFeature(
+                        Decorator.COUNT_RANGE.configure(
+                                new RangeDecoratorConfig(
+                                        10,
+                                        50,
+                                        0,
+                                        20
+                                )
+                        )
+                )
+        );
     }
 
     public static void addTrees(Biome biome) {
