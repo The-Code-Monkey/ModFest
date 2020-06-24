@@ -31,10 +31,10 @@ public class ModelTriffid extends EntityModel<EntityTriffid>  {
 	private final ModelPart front_bottom_left;
 	private final ModelPart tongue;
 
-	private float pitch;
-	private double animation;
-	private long preTime;
-	private float maxAngle = 0.1F;
+	// private float pitch;
+	// private double animation;
+	// private long preTime;
+	// private float maxAngle = 0.1F;
 	public float leaningPitch;
 
 	public ModelTriffid() {

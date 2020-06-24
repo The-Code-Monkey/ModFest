@@ -32,14 +32,14 @@ public class BlocksRegistry {
 
     private static void makeWoodenBlocks(String name, MaterialColor color) {
         final Block PLANKS = registerBlock(name + "_planks", new PlankBase(color));
-        final Block STAIRS = registerBlock(name + "_stairs", new WoodStairsBase(PLANKS));
-        final Block SLAB = registerBlock(name + "_slab", new WoodSlabBase(PLANKS));
-        final Block PRESSURE_PLATE = registerBlock(name + "_plate", new WoodPressurePlateBase(PressurePlateBlock.ActivationRule.EVERYTHING, PLANKS));
-        final Block DOOR = registerBlock(name + "_door", new DoorBase(PLANKS));
-        final Block TRAP_DOOR = registerBlock(name + "_trapdoor", new TrapdoorBase(PLANKS));
-        final Block BUTTON = registerBlock(name + "_button", new WoodButtonBase(PLANKS));
-        final Block FENCE = registerBlock(name + "_fence", new FenceBase(PLANKS));
-        final Block GATE = registerBlock(name + "_gate", new GateBase(PLANKS));
+        registerBlock(name + "_stairs", new WoodStairsBase(PLANKS));
+        registerBlock(name + "_slab", new WoodSlabBase(PLANKS));
+        registerBlock(name + "_plate", new WoodPressurePlateBase(PressurePlateBlock.ActivationRule.EVERYTHING, PLANKS));
+        registerBlock(name + "_door", new DoorBase(PLANKS));
+        registerBlock(name + "_trapdoor", new TrapdoorBase(PLANKS));
+        registerBlock(name + "_button", new WoodButtonBase(PLANKS));
+        registerBlock(name + "_fence", new FenceBase(PLANKS));
+        registerBlock(name + "_gate", new GateBase(PLANKS));
     }
 
     private static Block registerBlock(String name, Block block)

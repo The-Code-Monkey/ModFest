@@ -4,8 +4,6 @@ import net.astrum.common.registry.FeaturesRegistry;
 import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
-import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
-
 
 public class AstrumBiome extends Biome {
     public AstrumBiome(){

@@ -2,9 +2,7 @@ package net.astrum.common.materials;
 
 import net.astrum.common.registry.ItemsRegistry;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.item.ToolMaterials;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Lazy;
 
@@ -29,7 +27,7 @@ public enum AstrumToolMaterials implements ToolMaterial {
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;
         this.enchantability = enchantibility;
-        this.repairIngredient = new Lazy(repairIngredient);
+        this.repairIngredient = new Lazy<Ingredient>(repairIngredient);
     }
 
     public int getDurability() {

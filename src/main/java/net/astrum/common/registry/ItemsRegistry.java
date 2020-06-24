@@ -4,7 +4,6 @@ package net.astrum.common.registry;
 import net.astrum.AstrumCore;
 import net.astrum.common.helpers.MathHelper;
 import net.astrum.common.items.*;
-import net.astrum.common.materials.AstrumToolMaterials;
 import net.astrum.common.tab.CreativeTab;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.*;

@@ -1,6 +1,7 @@
 # gradle
 
 .gradle/
+.theia/
 build/
 out/
 classes/
