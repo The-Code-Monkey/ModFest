@@ -9,7 +9,9 @@ import net.minecraft.util.Identifier;
 
 public class RenderTriffidWhip extends MobEntityRenderer<EntityTriffidProjectile, ModelTriffidWhip> {
     public RenderTriffidWhip(EntityRenderDispatcher entityRenderDispatcher) {
+
         super(entityRenderDispatcher, new ModelTriffidWhip(), 1.25f);
+        shadowRadius=0;
     }
 
     @Override
