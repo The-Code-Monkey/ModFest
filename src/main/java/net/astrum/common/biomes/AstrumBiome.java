@@ -43,7 +43,7 @@ public class AstrumBiome extends Biome {
                         new OreFeatureConfig(
                                 OreFeatureConfig.Target.NATURAL_STONE,
                                 BlocksRegistry.METEOR_STONE.getDefaultState(),
-                                300
+                                50
                         )
                 ).createDecoratedFeature(
                         Decorator.COUNT_RANGE.configure(

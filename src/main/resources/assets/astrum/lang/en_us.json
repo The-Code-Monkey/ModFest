@@ -19,6 +19,8 @@
   "block.astrum.astrum_leaves": "Astrum Leaves",
   "block.astrum.astrum_plant": "Astrum Flower",
   "block.astrum.astrum_sapling": "Aastrum Sapling",
+  "block.astrum.meteor_stone_bricks":"Meteor Stone Bricks",
+  "block.astrum.chiseled_meteor_stone": "Chiseled Meteor Stone",
 
   "item.astrum.triffid_spawn_egg": "Triffid Spawn Egg",
   "item.astrum.alien_scrap": "Reclaimed Alien Scrap",
