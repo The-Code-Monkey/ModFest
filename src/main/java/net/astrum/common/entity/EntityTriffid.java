@@ -3,13 +3,19 @@ package net.astrum.common.entity;
 import net.astrum.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
+
+import java.util.Random;
 
 public class EntityTriffid extends HostileEntity implements RangedAttackMob {
     private static final double HEALTH = 10.0D;
@@ -57,4 +63,5 @@ public class EntityTriffid extends HostileEntity implements RangedAttackMob {
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, FOLLOW_RANGE)
                 .add(EntityAttributes.GENERIC_ATTACK_KNOCKBACK, KNOCKBACK);
     }
+
 }
