@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_pressure_plate",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "astrum:astrum_planks"
+    }
+  },
+  "result": {
+    "item": "astrum:astrum_pressure_plate"
+  }
+}

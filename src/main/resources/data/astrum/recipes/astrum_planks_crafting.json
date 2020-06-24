@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "astrum:astrum_logs"
+    }
+  ],
+  "result": {
+    "item": "astrum:astrum_planks",
+    "count": 4
+  }
+}
