@@ -1,6 +1,9 @@
 package net.astrum.common.registry;
 
 import net.astrum.AstrumCore;
+import net.astrum.common.blocks.Astrum.AstrumPlant;
+import net.astrum.common.blocks.Astrum.AstrumSapling;
+import net.astrum.common.blocks.Astrum.AstrumSaplingGenerator;
 import net.astrum.common.blocks.base.*;
 import net.astrum.common.tab.CreativeTab;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -22,12 +25,13 @@ public class BlocksRegistry {
     public static final Block ALIEN_SCRAP_ORE = registerBlock("alien_scrap_ore", new BlockBase(FabricBlockSettings.copy(IRON_ORE).nonOpaque()));
     public static final Block CHISELED_METEOR_STONE = registerBlock("chiseled_meteor_stone", new BlockBase(FabricBlockSettings.copy(CHISELED_STONE_BRICKS)));
     public static final Block METEOR_STONE_BRICKS = registerBlock("meteor_stone_bricks", new BlockBase(FabricBlockSettings.copy(GRANITE)));
-    public static final Block ASTRUM_PLANT = registerBlock("astrum_plant", new BlockBase(FabricBlockSettings.copyOf(GRASS).nonOpaque()));
+    public static final Block ASTRUM_SAPLING = registerBlock("astrum_sapling", new AstrumSapling(new AstrumSaplingGenerator(), FabricBlockSettings.copy(OAK_SAPLING)));
+    public static final Block ASTRUM_PLANT = registerBlock("astrum_plant", new AstrumPlant(GRASS));
     //public static final Block FIREMOSS = registerBlock("firemoss", new BlockBase(FabricBlockSettings.copy(VINE)));
 
-    public static final Block STRIPPED_LOG = registerBlock(AstrumCore.MOD_ID + "_stripped_log", new PillarBase(MaterialColor.BLUE_TERRACOTTA));
-    public static final Block LOG = registerBlock(AstrumCore.MOD_ID + "_log", new LogStripableBase(MaterialColor.BLUE_TERRACOTTA, STRIPPED_LOG));
-    public static final Block LEAVES = registerBlock(AstrumCore.MOD_ID + "_leaves", new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
+    public static final Block ASTRUM_STRIPPED_LOG = registerBlock(AstrumCore.MOD_ID + "_stripped_log", new PillarBase(MaterialColor.BLUE_TERRACOTTA));
+    public static final Block ASTRUM_LOG = registerBlock(AstrumCore.MOD_ID + "_log", new LogStripableBase(MaterialColor.BLUE_TERRACOTTA, ASTRUM_STRIPPED_LOG));
+    public static final Block ASTRUM_LEAVES = registerBlock(AstrumCore.MOD_ID + "_leaves", new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
 
     public static final Block ASTRUM_SAPLING = registerBlock("astrum_sapling", new AstrumSaplingBlock(new AstrumSaplingGenerator(), FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS)));
 

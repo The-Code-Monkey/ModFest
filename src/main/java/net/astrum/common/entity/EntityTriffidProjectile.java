@@ -19,6 +19,8 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RayTraceContext;
 import net.minecraft.world.World;
 
+import static net.minecraft.entity.damage.DamageSource.GENERIC;
+
 public class EntityTriffidProjectile extends FlyingEntity {
     private static final int MAX_LIFE_TIME = 100;
     private int lifeTime = 0;
@@ -57,20 +59,20 @@ public class EntityTriffidProjectile extends FlyingEntity {
     public void tick() {
         super.tick();
 
-        world.addParticle(ParticleTypes.BUBBLE_POP,
+        world.addParticle(ParticleTypes.ITEM_SLIME,
                 getX() + random.nextGaussian() * 0.2,
                 getY() + random.nextGaussian() * 0.2,
                 getZ() + random.nextGaussian() * 0.2,
                 0, 0, 0);
-        world.addParticle(ParticleTypes.BUBBLE_POP,
+        world.addParticle(ParticleTypes.ITEM_SLIME,
                 getX() + random.nextGaussian() * 0.3,
                 getY() + random.nextGaussian() * 0.3,
                 getZ() + random.nextGaussian() * 0.3,
                 0, 0, 0);
-        world.addParticle(ParticleTypes.BUBBLE_POP,
-                getX() + random.nextGaussian() * 0.5,
-                getY() + random.nextGaussian() * 0.5,
-                getZ() + random.nextGaussian() * 0.5,
+        world.addParticle(ParticleTypes.ITEM_SLIME,
+                getX() + random.nextGaussian() * 0.1,
+                getY() + random.nextGaussian() * 0.1,
+                getZ() + random.nextGaussian() * 0.1,
                 0.1, 0.1, 0.1);
 
         HitResult hitResult = ProjectileUtil.getCollision(this, (entity) -> entity.isAlive() && entity instanceof LivingEntity, RayTraceContext.ShapeType.COLLIDER);
@@ -101,9 +103,10 @@ public class EntityTriffidProjectile extends FlyingEntity {
             Entity entity = ((EntityHitResult) hitResult).getEntity();
             if (entity != this && entity instanceof LivingEntity && !(entity instanceof EntityTriffid)) {
                 LivingEntity living = (LivingEntity) entity;
-                if (!(living.hasStatusEffect(StatusEffects.POISON))) {
-                    living.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 3));
-                }
+
+                living.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 400));
+                living.damage(GENERIC, 4);
+
                 effectKill();
             }
         }
@@ -111,13 +114,13 @@ public class EntityTriffidProjectile extends FlyingEntity {
 
     private void effectKill() {
         for (int i = 0; i < 10; i++) {
-            world.addParticle(ParticleTypes.BUBBLE_POP,
-                    getX() + random.nextGaussian() * 0.5,
-                    getY() + random.nextGaussian() * 0.5,
-                    getZ() + random.nextGaussian() * 0.5,
+            world.addParticle(ParticleTypes.ITEM_SLIME,
+                    getX() + random.nextGaussian() * 0.10,
+                    getY() + random.nextGaussian() * 0.10,
+                    getZ() + random.nextGaussian() * 0.10,
                     0.1, 0.1, 0.1);
         }
-        this.kill();
+        this.remove();
     }
 
     @Override

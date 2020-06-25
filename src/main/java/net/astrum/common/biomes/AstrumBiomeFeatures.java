@@ -22,8 +22,8 @@ public class AstrumBiomeFeatures {
         throw new UnsupportedOperationException();
     }
 
-    private static final SimpleBlockStateProvider ASTRUM_LOG = new SimpleBlockStateProvider(BlocksRegistry.LOG.getDefaultState());
-    private static final SimpleBlockStateProvider ASTRUM_LEAVES = new SimpleBlockStateProvider(BlocksRegistry.LEAVES.getDefaultState());
+    private static final SimpleBlockStateProvider ASTRUM_LOG = new SimpleBlockStateProvider(BlocksRegistry.ASTRUM_LOG.getDefaultState());
+    private static final SimpleBlockStateProvider ASTRUM_LEAVES = new SimpleBlockStateProvider(BlocksRegistry.ASTRUM_LEAVES.getDefaultState());
 
     public static final AlienScrapOreConfig ALIENT_SCRAP_ORE = new AlienScrapOreConfig(BlocksRegistry.ALIEN_SCRAP_ORE.getDefaultState(), 9);
 
