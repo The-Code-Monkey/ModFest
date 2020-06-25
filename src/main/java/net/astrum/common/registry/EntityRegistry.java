@@ -16,13 +16,33 @@ public class EntityRegistry {
     public static final EntityType<EntityTriffid> TRIFFID = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(AstrumCore.MOD_ID, "triffid"),
-            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, EntityTriffid::new).dimensions(EntityDimensions.fixed(1.25F, 4F)).build()
+            FabricEntityTypeBuilder.create(
+                    SpawnGroup.MONSTER,
+                    EntityTriffid::new
+            ).dimensions(
+                    EntityDimensions.fixed(
+                            1.25F,
+                            4F
+                    )
+            ).trackable(
+                    100, 30
+            ).spawnableFarFromPlayer().build()
     );
 
     public static final EntityType<EntityTriffidProjectile> TRIFFID_PROJECTILE = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(AstrumCore.MOD_ID, "triffid_whip"),
-            FabricEntityTypeBuilder.create(SpawnGroup.AMBIENT, EntityTriffidProjectile::new).dimensions(EntityDimensions.fixed(0.75F, 0.75F)).build()
+            FabricEntityTypeBuilder
+                    .create(
+                            SpawnGroup.AMBIENT,
+                            EntityTriffidProjectile::new
+                    ).dimensions(
+                            EntityDimensions
+                                    .fixed(
+                                            0.75F,
+                                            0.75F
+                                    )
+            ).build()
     );
 
     public static void register() {
