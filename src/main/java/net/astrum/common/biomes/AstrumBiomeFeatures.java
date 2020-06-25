@@ -27,7 +27,7 @@ public class AstrumBiomeFeatures {
 
     public static final AlienScrapOreConfig ALIENT_SCRAP_ORE = new AlienScrapOreConfig(BlocksRegistry.ALIEN_SCRAP_ORE.getDefaultState(), 9);
 
-    public static final AstrumTreeFeatureConfig ASTRUM_TREE_FEATURE_CONFIG = new AstrumTreeFeatureConfig(ASTRUM_LOG, ASTRUM_LEAVES, AstrumTreeShape.NORMAL);
+    public static final AstrumTreeFeatureConfig NORMAL_ASTRUM_TREE = new AstrumTreeFeatureConfig(ASTRUM_LOG, ASTRUM_LEAVES, AstrumTreeShape.NORMAL);
 
     public static final TernarySurfaceConfig ASTRUM_SURFACE = new TernarySurfaceConfig(
             BlocksRegistry.ASTRUM_GRASS.getDefaultState(),
@@ -58,7 +58,7 @@ public class AstrumBiomeFeatures {
     }
 
     public static void addTrees(Biome biome) {
-        ConfiguredFeature<?, ?> tree = FeaturesRegistry.ASTRUM_TREE.configure(ASTRUM_TREE_FEATURE_CONFIG);
+        ConfiguredFeature<?, ?> tree = FeaturesRegistry.ASTRUM_TREE.configure(NORMAL_ASTRUM_TREE);
 
         ConfiguredFeature<?, ?> treeSelector = Feature.RANDOM_SELECTOR.configure(new RandomFeatureConfig(
                 Collections.singletonList(
