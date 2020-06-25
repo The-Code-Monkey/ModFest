@@ -33,7 +33,7 @@ public class BlocksRegistry {
     public static final Block ASTRUM_LOG = registerBlock(AstrumCore.MOD_ID + "_log", new LogStripableBase(MaterialColor.BLUE_TERRACOTTA, ASTRUM_STRIPPED_LOG));
     public static final Block ASTRUM_LEAVES = registerBlock(AstrumCore.MOD_ID + "_leaves", new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)));
 
-    public static final Block ASTRUM_SAPLING = registerBlock("astrum_sapling", new AstrumSaplingBlock(new AstrumSaplingGenerator(), FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS)));
+
 
     public static void register() {
         makeWoodenBlocks(AstrumCore.MOD_ID, MaterialColor.BLUE_TERRACOTTA);
